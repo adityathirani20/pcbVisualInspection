@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Train Model</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="model_type">Model Type</label>
+      <select name="model_type" id="model_type" class="form-control" required>
+        <option value="new">Train a New Model</option>
+        <option value="existing">Use Existing Base Model</option>
+      </select>
+    </div>
+    {% if base_models %}
+      <div class="form-group" id="base_model_select" style="display:none">
+        <label for="base_model">Base Model</label>
+        <select name="base_model" id="base_model" class="form-control">
+          {% for base_model in base_models %}
+            <option value="{{ base_model }}">{{ base_model }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endif %}
+    <div class="form-group">
+      <label for="datasets">Datasets</label>
+      <select name="datasets" id="datasets" class="form-control" required multiple>
+        {% for dataset in datasets %}
+          <option value="{{ dataset }}">{{ dataset }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="model_name">Model Name</label>
+      <input type="text" name="model_name" id="model_name" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Train Model</button>
+  </form>
+
+  <script>
+    // Show/hide base model select based on model type selection
+    const modelTypeSelect = document.getElementById('model_type');
+    const baseModelSelect = document.getElementById('base_model_select');
+    modelTypeSelect.addEventListener('change', (event) => {
+      if (event.target.value === 'existing') {
+        baseModelSelect.style.display = 'block';
+      } else {
+        baseModelSelect.style.display = 'none';
+      }
+    });
+  </script>
+{% endblock %}

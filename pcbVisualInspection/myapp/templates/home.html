@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to PCB Assembly Inspection!</h1>
+    <p>Our company specializes in providing high-quality PCB assembly inspection services for businesses and individuals alike. With years of experience and a team of highly skilled technicians, we are committed to ensuring the quality and reliability of your PCB assemblies.</p>
+
+    <h2>Our Services</h2>
+
+    <h3>Pre-Assembly Inspection</h3>
+    <p>Our pre-assembly inspection services help to identify any issues with your components or PCB layout before assembly. This can save time and money by catching potential issues early in the process.</p>
+
+    <h3>In-Assembly Inspection</h3>
+    <p>Our in-assembly inspection services help to ensure the quality and reliability of your PCB assemblies during the assembly process. This includes visual inspection, X-ray inspection of BGA and other components, and functional testing.</p>
+
+    <h3>Post-Assembly Inspection</h3>
+    <p>Our post-assembly inspection services help to identify any issues with your completed PCB assemblies before they are shipped. This can help to prevent costly returns or repairs.</p>
+
+    <h2>Contact Us</h2>
+    <p>Ready to learn more about how our inspection services can help you ensure the quality and reliability of your PCB assemblies? Contact us today to schedule a consultation or request a quote.</p>
+
+    <div class="contact-form">
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+{% endblock %}

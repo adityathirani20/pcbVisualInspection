@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <h2>PCB Assembly Progress</h2>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: {{ progress }}%;" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100">{{ progress }}%</div>
+        </div>
+        <br>
+        <h4>To-Do Items:</h4>
+        <ul>
+          <li>Order missing components</li>
+          <li>Finalize testing plan</li>
+          <li>Prepare assembly instructions</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-6">
+        <h2>Created Rules</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Rule Name</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for rule in rules %}
+              <tr>
+                <td>{{ rule.name }}</td>
+                <td>{{ rule.description }}</td>
+                <td>{{ rule.status }}</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="3">No rules created yet.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

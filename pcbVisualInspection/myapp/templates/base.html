@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <nav>
+        <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
+                </div></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                    </li>
+                <li><a href="{% url 'upload_dataset' %}">Upload Dataset</a></li>
+                <li><a href="{% url 'train_model' %}">Train Model</a></li>
+                <li class="nav-item">
+                        <a class="nav-link" href="{% url 'create_rules' %}">Create Rules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'visual_inspection' %}">Visual Inspection</a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-icon').click(function () {
+                $('.menu').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>

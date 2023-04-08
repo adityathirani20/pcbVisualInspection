@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Create Rules</h1>
+
+<form>
+  <div class="form-group">
+    <label for="trained-models">Trained Models:</label>
+    <select class="form-control" id="trained-models">
+      <option>Model 1</option>
+      <option>Model 2</option>
+      <option>Model 3</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="inspection-type">Inspection Type:</label>
+    <select class="form-control" id="inspection-type">
+      <option>Pre Assembly Inspection</option>
+      <option>Post Assembly Inspection</option>
+      <option>In Assembly Inspection</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="sub-selection">Sub-Selection:</label>
+    <select class="form-control" id="sub-selection">
+      <option>Sub-Selection 1</option>
+      <option>Sub-Selection 2</option>
+      <option>Sub-Selection 3</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Labels</h4>
+    </div>
+    <div class="col-md-4">
+      <h4>Detection</h4>
+    </div>
+    <div class="col-md-4">
+      <h4>Action</h4>
+    </div>
+  </div>
+
+  <div id="rules-container">
+    <!-- Rule rows will be added dynamically via JavaScript -->
+  </div>
+
+  <button type="button" class="btn btn-primary" id="add-rule-btn">Add Rule</button>
+  <div class="form-group row">
+  <div class="col-sm-12">
+    <button type="submit" class="btn btn-primary">Save Rule</button>
+  </div>
+</div>
+</form>
+
+<script>
+$(document).ready(function() {
+  var counter = 0;
+
+  $("#add-rule-btn").click(function() {
+    counter++;
+
+    var newRow = $("<tr>");
+    var cols = "";
+
+    cols += '<td><select class="form-control"><option value="label1">Label 1</option><option value="label2">Label 2</option><option value="label3">Label 3</option></select></td>';
+    cols += '<td><input type="checkbox" class="form-control"></td>';
+    cols += '<td><select class="form-control"><option value="action1">Action 1</option><option value="action2">Action 2</option><option value="action3">Action 3</option></select></td>';
+
+    cols += '<td><button type="button" class="btn btn-danger remove-rule"><i class="fa fa-minus"></i></button></td>';
+
+    newRow.append(cols);
+    $("#rules-container").append(newRow);
+  });
+
+  $("#rules-container").on("click", ".remove-rule", function(event) {
+    $(this).closest("tr").remove();
+    counter -= 1;
+  });
+});
+
+</script>
+{% endblock %}

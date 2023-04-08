@@ -1,0 +1,464 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Content styles */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+ul {
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    margin-top: 40px;
+}
+
+form label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+form input, form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #333;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Page header */
+.train-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Form styling */
+.form-wrapper {
+  margin: auto;
+  width: 70%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group select, .form-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-group select {
+  height: 45px;
+}
+
+.form-group input[type="submit"] {
+  width: 100%;
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #0b7dda;
+}
+
+/* Dataset select styling */
+.dataset-select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.dataset-select label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.dataset-select select {
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.dataset-select .search-box {
+  margin-bottom: 20px;
+}
+
+/* Model name input styling */
+.model-name {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.model-name label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.model-name input[type="text"] {
+  height: 45px;
+}
+
+/* Existing model select styling */
+.existing-model-select {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.existing-model-select label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.existing-model-select select {
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style for dataset selection box */
+.select2-container {
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+}
+
+/* Style for search bar in dataset selection box */
+.select2-search__field {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Style for dropdown list in dataset selection box */
+.select2-results__option {
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+/* Style for loading message in dataset selection box */
+.select2-results__message {
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+/* Style for selected option in dataset selection box */
+.select2-selection__choice {
+  font-size: 16px;
+  padding: 4px 10px;
+  margin-right: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Style for remove button in selected option in dataset selection box */
+.select2-selection__choice__remove {
+  margin-left: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Style for the dropdown arrow icon in dataset selection box */
+.select2-selection__arrow b {
+  border-color: #007bff transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  display: block;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+/* Style for the dropdown arrow icon in dataset selection box when opened */
+.select2-container--open .select2-selection__arrow b {
+  border-color: transparent transparent #007bff transparent;
+  border-width: 0 4px 5px 4px;
+}
+
+/* Add some margin and padding to the form */
+form {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+/* Style the input and select elements */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the yes/no dropdown */
+select[name=detection] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+
+/* Style the add rule button */
+button#add-rule {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the delete rule button */
+button.delete-rule {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the submit button */
+button[type=submit] {
+  background-color: #008CBA;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Style the table header */
+th {
+  text-align: left;
+  background-color: #008CBA;
+  color: white;
+  padding: 8px;
+}
+
+/* Style the table cells */
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Style the table row on hover */
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Style the table column */
+td.labels {
+  width: 40%;
+}
+
+/* Style the table column */
+td.detection {
+  width: 20%;
+}
+
+/* Style the table column */
+td.action {
+  width: 40%;
+}
+
+/* Style the plus icon */
+i.fa-plus {
+  color: #008CBA;
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Style the delete icon */
+i.fa-trash {
+  color: #f44336;
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.rule-table {
+  width: 800px;
+}
+
+.rule-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.rule-table {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.rule-table .rule-row {
+  display: table-row;
+}
+
+.rule-table .rule-row .rule-cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 85px;
+  height: 55px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}

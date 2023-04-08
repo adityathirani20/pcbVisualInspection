@@ -1,0 +1,32 @@
+<!-- Visual Inspection page -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <h1>Visual Inspection</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="inputType">Input Type</label>
+        <select class="form-control" id="inputType" name="inputType">
+          <option value="image">Image</option>
+          <option value="video">Video</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="inputSource">Input Source</label>
+        <input type="file" class="form-control-file" id="inputSource" name="inputSource">
+      </div>
+      <div class="form-group">
+        <label for="rules">Select Rules</label>
+        <select class="form-control" id="rules" name="rules" multiple>
+          {% for rule in rules %}
+            <option value="{{ rule }}">{{ rule }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Run Inspection</button>
+    </form>
+  </div>
+{% endblock %}
